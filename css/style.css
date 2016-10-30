@@ -1,0 +1,59 @@
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:900i';
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#player-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  opacity: 0.8;
+}
+
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  max-width: 90vw;
+  width: 700px;
+  color: white;
+}
+
+h1 {
+	font-family: "Playfair Display", serif;
+	font-size: 70px;
+	text-align: center;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+p {
+  font-size: 18px;
+  font-family: "raleway", sans-serif;
+  font-weight: 500;
+  text-align: justify;
+}
