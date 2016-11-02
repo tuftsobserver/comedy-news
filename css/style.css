@@ -10,10 +10,18 @@ html, body {
   font-size: 16px;
 }
 
-#player {
+.player {
   position: fixed;
   top: 0;
   left: 0;
+}
+#player1 {
+  z-index: 3;
+}
+#player2 {
+  z-index: 2;
+}
+#player3 {
   z-index: 1;
 }
 
