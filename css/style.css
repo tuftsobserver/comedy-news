@@ -39,6 +39,21 @@ html, body {
   color: white;
 }
 
+#player-buttons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: white;
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+#player-buttons > span {
+  cursor: pointer;
+  padding: 0.25em;
+}
+
 h1 {
 	font-family: "Playfair Display", serif;
 	font-size: 70px;

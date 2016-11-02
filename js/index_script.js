@@ -10,12 +10,13 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '100vh',
     width: '100vw',
-    videoId: 'mNiqpBNE9ik',
+    videoId: 'Ih2Nn9VB2Xk',
     playerVars: {
         'autoplay': 1,
-        'controls': 0,           // no player controls
+        'controls': 0,          // no player controls
         'showinfo': 0,          // no video title
         'loop': 1,
+        'playlist': 'Ih2Nn9VB2Xk',
         'iv_load_policy': 3,    // no annotations
         'disablekb': 1,         // no keyboard controls
         'cc_load_policy': 0,    // no cc
@@ -51,3 +52,36 @@ $(window).on('load resize', function(){
   vidRescale();
   adjustTitleHeight();
 });
+
+
+$('#player-mute').click(function() {
+  if ($(this).hasClass("muted")) {
+    player.unMute();
+    $(this).removeClass("muted");
+    $(this).addClass("not-muted");
+    $(this).html('<i class="fa fa-volume-up" aria-hidden="true"></i>');
+  } else {
+    player.mute();
+    $(this).removeClass("not-muted");
+    $(this).addClass("muted");
+    $(this).html('<i class="fa fa-volume-off" aria-hidden="true"></i>');
+  }
+});
+
+var scrollPos = 0;
+$('#hide-text').click(function() {
+  if ($(this).hasClass("text-hidden")) {
+    $('#wrapper').fadeIn();
+    $('#player-overlay').fadeIn();
+    // scrollto scrollPos
+    window.scrollTo(0, scrollPos);
+    $(this).removeClass("text-hidden");
+    $(this).html('<i class="fa fa-eye-slash" aria-hidden="true"></i>');
+  } else {
+    scrollPos = $('body').scrollTop();
+    $('#wrapper').fadeOut();
+    $('#player-overlay').fadeOut();
+    $(this).addClass("text-hidden");
+    $(this).html('<i class="fa fa-eye" aria-hidden="true"></i>');
+  }
+})
