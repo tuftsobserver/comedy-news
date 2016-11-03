@@ -9,7 +9,7 @@ var player1;
 var player2;
 function onYouTubeIframeAPIReady() {
     player1 = new YT.Player('player1', {
-        height: '100vh',
+        height: $(window).height(),
         width: '100vw',
         videoId: 'Ih2Nn9VB2Xk', 	// Daily Show
         playerVars: {
@@ -28,7 +28,7 @@ function onYouTubeIframeAPIReady() {
         }
     });
     player2 = new YT.Player('player2', {
-        height: '100vh',
+        height: $(window).height(),
         width: '100vw',
         videoId: 'h1Lfd1aB9YI', 	// John Oliver
         playerVars: {
@@ -49,7 +49,7 @@ function onYouTubeIframeAPIReady() {
         }
     });
     player3 = new YT.Player('player3', {
-        height: '100vh',
+        height: $(window).height(),
         width: '100vw',
         videoId: 'Ih2Nn9VB2Xk',
         playerVars: {
