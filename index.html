@@ -39,11 +39,11 @@
   <div id="player-buttons">
     <span id="hide-text"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
     <span id="player-mute" class="muted"><i class="fa fa-volume-off" aria-hidden="true"></i></span>
-    <!-- <span id="next-vid"><i class="fa fa-step-forward" aria-hidden="true"></i></span> -->
   </div>
+  <div id="button-overlay"></div>
   <div id="wrapper">
     <div id="title">
-      <h1>"Millennials Only Watch Fake News"</h1>
+      <h1>&ldquo;Millennials Only Watch Fake News&rdquo;</h1>
       <h2>By Gabby Bonfiglio</h2>
     </div>
 
@@ -54,6 +54,8 @@
     <section class="ha-waypoint" data-animate-down="player2" data-animate-up="player1"></section>
 
     <p>Pork belly fashion axe brooklyn, 90's activated charcoal +1 letterpress pitchfork hammock humblebrag small batch hella. Disrupt bespoke subway tile, jean shorts portland tilde vaporware mustache tattooed. Actually letterpress raw denim, cred roof party sustainable microdosing artisan semiotics knausgaard selvage polaroid DIY mustache. Man braid succulents kitsch, fam aesthetic artisan roof party cray vape twee kale chips. Cardigan paleo lyft jianbing, retro raw denim blog small batch crucifix 3 wolf moon fingerstache hexagon schlitz twee. Vaporware hashtag humblebrag tbh pok pok before they sold out, meh ennui disrupt cray distillery 90's enamel pin dreamcatcher meggings. Meh disrupt roof party, meggings jianbing poutine chicharrones vice beard tacos sartorial letterpress raw denim hot chicken.</p>
+
+    <p class="pullquote">&ldquo;Hello I am a pullquote&rdquo;</p>
 
     <p>Quinoa irony keffiyeh ethical, cliche raw denim taxidermy. Lo-fi vaporware subway tile kinfolk biodiesel, succulents vice food truck ethical. Fap +1 fashion axe sartorial, meggings chartreuse migas fam raclette pork belly gluten-free brooklyn. Vexillologist occupy authentic, kogi synth organic craft beer raclette microdosing letterpress. Pour-over flexitarian four loko letterpress YOLO glossier, activated charcoal fixie hexagon. Intelligentsia XOXO YOLO pour-over. Try-hard kinfolk actually, coloring book prism knausgaard truffaut bitters shabby chic food truck godard.</p>
 
@@ -66,9 +68,21 @@
     <p>Pork belly fashion axe brooklyn, 90's activated charcoal +1 letterpress pitchfork hammock humblebrag small batch hella. Disrupt bespoke subway tile, jean shorts portland tilde vaporware mustache tattooed. Actually letterpress raw denim, cred roof party sustainable microdosing artisan semiotics knausgaard selvage polaroid DIY mustache. Man braid succulents kitsch, fam aesthetic artisan roof party cray vape twee kale chips. Cardigan paleo lyft jianbing, retro raw denim blog small batch crucifix 3 wolf moon fingerstache hexagon schlitz twee. Vaporware hashtag humblebrag tbh pok pok before they sold out, meh ennui disrupt cray distillery 90's enamel pin dreamcatcher meggings. Meh disrupt roof party, meggings jianbing poutine chicharrones vice beard tacos sartorial letterpress raw denim hot chicken.</p>
 
     <p>Quinoa irony keffiyeh ethical, cliche raw denim taxidermy. Lo-fi vaporware subway tile kinfolk biodiesel, succulents vice food truck ethical. Fap +1 fashion axe sartorial, meggings chartreuse migas fam raclette pork belly gluten-free brooklyn. Vexillologist occupy authentic, kogi synth organic craft beer raclette microdosing letterpress. Pour-over flexitarian four loko letterpress YOLO glossier, activated charcoal fixie hexagon. Intelligentsia XOXO YOLO pour-over. Try-hard kinfolk actually, coloring book prism knausgaard truffaut bitters shabby chic food truck godard.</p>
+
+    <div class="footer">
+      <p><i class="fa fa-hand-o-left" aria-hidden="true"></i> <a href="http://tuftsobserver.org">Return to the Tufts Observer</a></p>
+    </div>
+    <div class="credits">
+      <p>
+        Web by Kayden Mimmack <br/>
+        Quotes were taken from an anonymous survey conducted by the Tufts Observer.
+      </p>
+    </div>
   </div>
 
-  <!-- Javascript -->
+
+
+  <!-- Javascript included here to load immediately -->
   <script>
     function adjustTitleHeight() {
         var titleHeight = $('#title').height();
@@ -80,7 +94,7 @@
     }
     adjustTitleHeight();
   </script>
-  <script src="js/waypoints.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/index_script.js"></script>
 </body>
 </html>

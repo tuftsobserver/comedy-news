@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
     player1 = new YT.Player('player1', {
         height: '100vh',
         width: '100vw',
-        videoId: 'Ih2Nn9VB2Xk',
+        videoId: 'Ih2Nn9VB2Xk', 	// Daily Show
         playerVars: {
             'autoplay': 1,
             'controls': 0,          // no player controls
@@ -30,17 +30,19 @@ function onYouTubeIframeAPIReady() {
     player2 = new YT.Player('player2', {
         height: '100vh',
         width: '100vw',
-        videoId: 'mNiqpBNE9ik',
+        videoId: 'h1Lfd1aB9YI', 	// John Oliver
         playerVars: {
             'autoplay': 0,
             'controls': 0,          // no player controls
             'showinfo': 0,          // no video title
             'loop': 1,
-            'playlist': 'mNiqpBNE9ik',
+            'playlist': 'h1Lfd1aB9YI',
             'iv_load_policy': 3,    // no annotations
             'disablekb': 1,         // no keyboard controls
             'cc_load_policy': 0,    // no cc
-            'modestbranding': 1     // hides youtube logo
+            'modestbranding': 1,    // hides youtube logo
+            'start': 1213,		    // start at rasin segment
+            'end': 1265
         },
         events: {
             'onReady': onPlayer23Ready,
@@ -130,13 +132,21 @@ $('#hide-text').click(function() {
     if ($(this).hasClass("text-hidden")) {
         $('#wrapper').fadeIn();
         $('#player-overlay').fadeIn();
+        $('#button-overlay').fadeIn();
         window.scrollTo(0, scrollPos);
         $(this).removeClass("text-hidden");
         $(this).html('<i class="fa fa-eye-slash" aria-hidden="true"></i>');
+      	$(waypoints).each(function() {
+            $(this)[0].enable()
+        });
     } else {
+        $(waypoints).each(function() {
+            $(this)[0].disable()
+        });
         scrollPos = $('body').scrollTop();
         $('#wrapper').fadeOut();
         $('#player-overlay').fadeOut();
+        $('#button-overlay').fadeOut();
         $(this).addClass("text-hidden");
         $(this).html('<i class="fa fa-eye" aria-hidden="true"></i>');
     }
@@ -150,31 +160,29 @@ function switchVideos(oldPlayer, oldPlayerId, newPlayer, newPlayerId) {
     newPlayer.playVideo();
 }
 
-// manual next-video button: disable for debugging
-// $('#next-vid').click(function() {
-//     switchVideos(player1, '#player1', player2, '#player2');
-// });
-
-// This isn't perfect but it works. Connects with waypoints to switch to desired
-// video when scrolling
+// Connects with waypoints to switch to desired video when scrolling
+var waypoints = [];
 $('.ha-waypoint').each(function(i) {
-    $(this).waypoint(function(direction) {
-        var vid1 = $(this).data('animateUp');
-        var vid2 = $(this).data('animateDown');
-        if (direction == "down") {
-            if (vid1 == "player1") {
-                switchVideos(player1, '#player1', player2, '#player2');
+	var vid1 = $(this).data('animateUp');
+    var vid2 = $(this).data('animateDown');
+	var wp = new Waypoint({
+		element: $(this),
+		handler: function(direction) {
+            if (direction == "down") {
+                if (vid1 == "player1") {
+                    switchVideos(player1, '#player1', player2, '#player2');
+                } else if (vid1 == "player2") {
+                    switchVideos(player2, '#player2', player3, '#player3');
+                }
+            } else {
+                if (vid2 == "player2") {
+                    switchVideos(player2, '#player2', player1, '#player1');
+                } else if (vid2 == "player3") {
+                    switchVideos(player3, '#player3', player2, '#player2');
+                }
             }
-            else if (vid1 == "player2") {
-                 switchVideos(player2, '#player2', player3, '#player3');
-            }
-        } else {
-            if (vid2 == "player2") {
-                switchVideos(player2, '#player2', player1, '#player1');
-            }
-            else if (vid2 == "player3") {
-                 switchVideos(player3, '#player3', player2, '#player2');
-            }
-        }
-    }, {offset: '50%'});
+		},
+		offset: '100%'
+	});
+	waypoints.push(wp);
 });
