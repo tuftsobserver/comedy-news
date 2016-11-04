@@ -11,13 +11,13 @@ function onYouTubeIframeAPIReady() {
     player1 = new YT.Player('player1', {
         height: $(window).height(),
         width: $(window).width(),
-        videoId: 'Ih2Nn9VB2Xk', 	// Daily Show
+        videoId: 'rX8jZTN0CdU', 	// Daily Show
         playerVars: {
             'autoplay': 1,
             'controls': 0,          // no player controls
             'showinfo': 0,          // no video title
             'loop': 1,
-            'playlist': 'Ih2Nn9VB2Xk',
+            'playlist': 'rX8jZTN0CdU',
             'iv_load_policy': 3,    // no annotations
             'disablekb': 1,         // no keyboard controls
             'cc_load_policy': 0,    // no cc
@@ -51,13 +51,13 @@ function onYouTubeIframeAPIReady() {
     player3 = new YT.Player('player3', {
         height: $(window).height(),
         width: $(window).width(),
-        videoId: 'Ih2Nn9VB2Xk',
+        videoId: 'b0yONlMjxjs',     // Samantha Bee
         playerVars: {
             'autoplay': 0,
             'controls': 0,          // no player controls
             'showinfo': 0,          // no video title
             'loop': 1,
-            'playlist': 'Ih2Nn9VB2Xk',
+            'playlist': 'b0yONlMjxjs',
             'iv_load_policy': 3,    // no annotations
             'disablekb': 1,         // no keyboard controls
             'cc_load_policy': 0,    // no cc
