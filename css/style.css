@@ -17,6 +17,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.italic {
+	font-style:italic;
+}
+
 .player {
   position: fixed;
   top: 0;
