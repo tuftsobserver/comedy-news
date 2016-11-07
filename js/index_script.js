@@ -130,9 +130,9 @@ $('#player-mute').click(function() {
 var scrollPos = 0;
 $('#hide-text').click(function() {
     if ($(this).hasClass("text-hidden")) {
-        $('#wrapper').fadeIn();
-        $('#player-overlay').fadeIn();
-        $('#button-overlay').fadeIn();
+        $('.text-wrapper').fadeIn();
+        $('.player-overlay').fadeIn();
+        $('.button-overlay').fadeIn();
         window.scrollTo(0, scrollPos);
         $(this).removeClass("text-hidden");
         $(this).html('<i class="fa fa-eye-slash" aria-hidden="true"></i>');
@@ -144,9 +144,9 @@ $('#hide-text').click(function() {
             $(this)[0].disable()
         });
         scrollPos = $('body').scrollTop();
-        $('#wrapper').fadeOut();
-        $('#player-overlay').fadeOut();
-        $('#button-overlay').fadeOut();
+        $('.text-wrapper').fadeOut();
+        $('.player-overlay').fadeOut();
+        $('.button-overlay').fadeOut();
         $(this).addClass("text-hidden");
         $(this).html('<i class="fa fa-eye" aria-hidden="true"></i>');
     }
@@ -185,4 +185,10 @@ $('.ha-waypoint').each(function(i) {
 		offset: '100%'
 	});
 	waypoints.push(wp);
+});
+
+$(".fa-hand-o-down").on("click", function() {
+	$('html, body').animate({
+        scrollTop: $("#p1").offset().top - 50
+    }, 750);
 });

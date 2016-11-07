@@ -1,53 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Tufts Observer | "Millennials Only Watch Fake News"</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta property="og:url"            content="http://tuftsobserver.org/multimedia/comedy-news" />
-    <meta property="og:type"           content="website" />
-    <meta property="og:title"          content='Tufts Observer | "Millennials Only Watch Fake News"' />
-    <meta property="og:description"    content="" />
-    <meta property="og:image"          content="" />
+<html lang="en-US">
+<head>
 
-    <meta http-equiv="Content-Type"    content="text/html; charset=UTF-8" />
-    <meta name="twitter:card"          content="summary_large_image">
-    <meta name="twitter:site"          content="@tuftsobserver">
-    <meta name="twitter:creator"       content="@tuftsobserver">
-    <meta name="twitter:title"         content='Tufts Observer | "Millennials Only Watch Fake News"'>
-    <meta name="twitter:description"   content="">
-    <meta name="twitter:image:src"     content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- jQuery library -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap and FontAwesome latest compiled and minified CSS -->
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <title>Tufts Observer | Millennials Only Watch Fake News</title>
+  <meta name="description" content="Ninety-two percent of survey respondents agreed that comedy news is biased. But we continue to watch it.">
 
-  	<!-- Stylesheets -->
-  	<link rel="stylesheet" href="css/style.css">
+  <meta property="og:url"            content="http://tuftsobserver.org/multimedia/comedy-news">
+  <meta property="og:type"           content="website">
+  <meta property="og:title"          content="Tufts Observer | Millennials Only Watch Fake News">
+  <meta property="og:description"    content="Ninety-two percent of survey respondents agreed that comedy news is biased. But we continue to watch it.">
+  <meta property="og:image"          content="http://tuftsobserver.org/wp-content/uploads/2016/11/Screenshot-from-2016-11-06-185845.png">
+  <meta name="twitter:card"          content="summary_large_image">
+  <meta name="twitter:site"          content="@tuftsobserver">
+  <meta name="twitter:creator"       content="@tuftsobserver">
+  <meta name="twitter:title"         content="Tufts Observer | Millennials Only Watch Fake News">
+  <meta name="twitter:description"   content="Ninety-two percent of survey respondents agreed that comedy news is biased. But we continue to watch it.">
+  <meta name="twitter:image:src"     content="http://tuftsobserver.org/wp-content/uploads/2016/11/Screenshot-from-2016-11-06-185845.png">
 
-  </head>
-  <body>
+  <!-- Bootstrap and FontAwesome latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <div id="player1" class="player"></div>
-  <div id="player2" class="player"></div>
-  <div id="player3" class="player"></div>
-  <div id="player-overlay"></div>
-  <div id="player-buttons">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:900i">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:500">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <div class="player" id="player1"></div>
+  <div class="player" id="player2"></div>
+  <div class="player" id="player3"></div>
+  <div class="player-overlay"></div>
+  <div class="player-buttons">
     <span id="hide-text"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
-    <span id="player-mute" class="muted"><i class="fa fa-volume-off" aria-hidden="true"></i></span>
+    <span class="muted" id="player-mute"><i class="fa fa-volume-off" aria-hidden="true"></i></span>
   </div>
-  <div id="button-overlay"></div>
-  <div id="wrapper">
+  <div class="button-overlay"></div>
+  <div class="text-wrapper">
     <div id="title">
       <h1>&ldquo;Millennials Only Watch Fake News&rdquo;</h1>
       <h2>By Gabby Bonfiglio</h2>
+			<h2><i class="fa fa-hand-o-down" aria-hidden="true"></i></h2>
     </div>
 
-		<p>2016 has been a ride. We&rsquo;ve had an unbelievable election cycle, we&rsquo;ve experienced frequent and highly visible police brutality, and we&rsquo;ve had clowns (including that one named Donald) rampaging around the country. To cope, some suggest shutting down our computers and disengaging. Others preach conversation and dialogue.</p>
+		<p id="p1">2016 has been a ride. We&rsquo;ve had an unbelievable election cycle, we&rsquo;ve experienced frequent and highly visible police brutality, and we&rsquo;ve had clowns (including that one named Donald) rampaging around the country. To cope, some suggest shutting down our computers and disengaging. Others preach conversation and dialogue.</p>
 
 		<p>And for some of us, there&rsquo;s John Oliver.</p>
 
@@ -95,19 +97,19 @@
     </div>
   </div>
 
-
-
+  <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Javascript included here to load immediately -->
-  <script>
-    function adjustTitleHeight() {
-        var titleHeight = $('#title').height();
-        var tempHeight = ($(window).height() - titleHeight) / 2;
-        $('#title').css({
-            'margin-top': tempHeight,
-            'margin-bottom': tempHeight
-        });
-    }
-    adjustTitleHeight();
+	<script>
+      function adjustTitleHeight() {
+          var titleHeight = $('#title').height();
+          var tempHeight = ($(window).height() - titleHeight) / 2;
+          $('#title').css({
+              'margin-top': tempHeight,
+              'margin-bottom': tempHeight
+          });
+      }
+      adjustTitleHeight();
   </script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/index_script.js"></script>
